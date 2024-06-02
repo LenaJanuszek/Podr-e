@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podróże</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header, nav, main, footer {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #d3d3d3;
+        }
+        ul {
+            list-style-type: disc;
+        }
+        .dynamic-elements {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><strong><u>Podróże</u></strong></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#visited-countries">Kraje w których byłam</a></li>
+            <li><a href="#why-travel">Dlaczego podróżuje?</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="visited-countries">
+            <h2>Kraje w których byłam</h2>
+            <p>Podróżowanie to ważna część mojego życia, niestety większość moich podróży odbyłam, gdy byłam dzieckiem i nie pamiętam ich za bardzo. Zwiedziłam jednak takie kraje jak: Polska, Niemcy, Czechy, Austria, Rumunia, Słowenia, Włochy, Francja, Wielka Brytania, Litwa, Łotwa, Estonia.</p>
+        </section>
+
+        <section id="why-travel">
+            <h2>Dlaczego podróżuje?</h2>
+            <p>Podróżuje bo uwielbiam odkrywać naturę i kultury innych państw. Piękne widoki, inne klimaty, ciekawe języki, a co najważniejsze inni ludzie i zwyczaje. Podróżowanie nie tylko uczy mnie dużo, ale pomaga doświadczać innych zachowań i daje mi trochę relaksu.</p>
+        </section>
+
+        <h2><em>Moje ostatnie doświadczenia w krajach</em></h2>
+        <table>
+            <tr>
+                <th>Kraj</th>
+                <th>Francja</th>
+                <th>Włochy</th>
+                <th>Wielka Brytania</th>
+                <th>Polska</th>
+                <th>Czechy</th>
+            </tr>
+            <tr>
+                <td>Jedzenie</td>
+                <td>Dobre</td>
+                <td>Bardzo dobre</td>
+                <td>Przeciętne</td>
+                <td>Dobre</td>
+                <td>Dobre</td>
+            </tr>
+            <tr>
+                <td>Zabytki</td>
+                <td>Bardzo dobre</td>
+                <td>Dobre</td>
+                <td>Bardzo dobre</td>
+                <td>Dobre</td>
+                <td>Bardzo dobre</td>
+            </tr>
+            <tr>
+                <td>Ludzie</td>
+                <td>Dobre</td>
+                <td>Bardzo dobre</td>
+                <td>Przeciętne</td>
+                <td>Bardzo dobre</td>
+                <td>Przeciętne</td>
+            </tr>
+        </table>
+
+        <h2>Zdjęcie</h2>
+        <p>Sekwana, Paryż</p>
+        <img src="https://scontent.fktw1-1.fna.fbcdn.net/v/t1.15752-9/436312908_960199885847990_3020349176009284879_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ayv5wNOR_bsQ7kNvgF5RuHz&_nc_ht=scontent.fktw1-1.fna&oh=03_Q7cD1QFstmmgCf56xzwAEU19ducsX-xH62feqNPx8qMROawcIA&oe=66847655" alt="Sekwana, Paryż" width="400">
+
+        <h2>Większość moich podróży odbyłam tymi liniami lotniczymi lub samochodem</h2>
+        <p>Odwiedź <a href="https://www.ryanair.com/pl/pl#!" target="_blank">Ryanair</a> po więcej informacji.</p>
+
+        <h2>Nadal chcę kontynuować moją przygodę z podróżami i chciałabym zwiedzić takie kraje jak:</h2>
+        <ul>
+            <li>Hiszpania</li>
+            <li>Portugalia</li>
+            <li>Norwegia</li>
+            <li>Islandia</li>
+            <li>Grecja</li>
+            <li>Turcja</li>
+            <li>Kambodża</li>
+            <li>Indie</li>
+            <li>Indonezja</li>
+            <li>Brazylia</li>
+            <li>Chile</li>
+            <li>Kenia</li>
+            <li>Maroko</li>
+            <li>Stany Zjednoczone</li>
+        </ul>
+
+        <div class="dynamic-elements">
+            <p>Aktualna data i godzina: <span id="datetime"></span></p>
+            <p>Licznik odwiedzających: <span id="visitor-counter"></span></p>
+        </div>
+    </main>
+
+    <script>
+        // Aktualna data i godzina
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('datetime').textContent = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Licznik odwiedzających (prosty symulowany licznik)
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitor-counter').textContent = visitorCount;
+    </script>
+</body>
+</html>
